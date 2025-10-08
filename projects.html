@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTROL PLUS | IT Power House</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <span><i class="fa-solid fa-location-dot"></i> 123 Tech Park, Silicon City</span>
+            <span><i class="fa-solid fa-envelope"></i> contact@controlplus.com</span>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">CONTROL PLUS</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a><a href="about.html">About</a><a href="service.html">Services</a>
+            <a href="#">Projects</a><a href="contact.html">Contact</a>
+        </div>
+        <div class="search-bar"><input type="text" placeholder="Search..."></div>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="overlay" id="overlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a><a href="about.html">About</a><a href="service.html">Services</a>
+        <a href="#">Projects</a><a href="contact.html">Contact</a>
+        <div class="mobile-search"><input type="text" placeholder="Search..."></div>
+    </div>
+<!-- project -->
+<body class="project-dark">
+  <div class="wrap" role="main">
+    <header class="proj-header" aria-label="Projects header">
+      <div class="brand">
+        <div class="logo">CP</div>
+        <div>
+          <h1>CONTROL PLUS — Projects</h1>
+          <p>Selected case studies & prototypes — filter to explore</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:18px;align-items:center;">
+        <nav class="filters" role="tablist" aria-label="Project filters">
+          <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-btn" data-filter="ai" aria-pressed="false"><i class="fa-solid fa-robot"></i> AI</button>
+          <button class="filter-btn" data-filter="cloud" aria-pressed="false"><i class="fa-solid fa-cloud"></i> Cloud</button>
+          <button class="filter-btn" data-filter="web" aria-pressed="false"><i class="fa-solid fa-code"></i> Web</button>
+          <button class="filter-btn" data-filter="security" aria-pressed="false"><i class="fa-solid fa-shield-halved"></i> Security</button>
+          <button class="filter-btn" data-filter="data" aria-pressed="false"><i class="fa-solid fa-database"></i> Data</button>
+        </nav>
+
+        <div class="meta" aria-hidden="true">
+          <div class="counter" id="projCount">0</div>
+          <div class="muted">projects</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Projects grid -->
+    <section class="grid" id="projectsGrid" aria-live="polite">
+      <!-- Example project items (data-category supports multiple categories separated by space) -->
+      <article class="proj-card appear" data-category="ai data" tabindex="0">
+        <div class="proj-inner">
+          <div class="proj-media" style="background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80');">
+            <div class="proj-overlay"></div>
+          </div>
+
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span class="proj-tag">AI</span>
+              <span class="proj-tag">Data</span>
+            </div>
+            <div class="proj-title">Predictive Maintenance Platform</div>
+            <div class="proj-desc">Edge-sensor pipeline and ML model that predicted equipment failures with 92% accuracy, saving downtime.</div>
+
+            <div class="proj-actions">
+              <button class="action">View Case</button>
+              <button class="action">Prototype</button>
+            </div>
+          </div>
+
+          <div class="back proj-flip back" aria-hidden="true">
+            <div class="back-left">
+              <h4>Predictive Maintenance</h4>
+              <p>Deployed a scalable pipeline for real-time telemetry + model scoring. Reduced unplanned downtime by 38%.</p>
+              <div class="meta-list">
+                <span class="meta">TensorFlow</span>
+                <span class="meta">Kubernetes</span>
+                <span class="meta">Edge</span>
+              </div>
+            </div>
+            <div class="back-right">
+              <i class="fa-solid fa-gear" style="font-size:36px;color:var(--neon)"></i>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj-card appear" data-category="cloud web" tabindex="0">
+        <div class="proj-inner">
+          <div class="proj-media" style="background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80');">
+            <div class="proj-overlay"></div>
+          </div>
+
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span class="proj-tag">Cloud</span>
+              <span class="proj-tag">Web</span>
+            </div>
+            <div class="proj-title">Global SaaS Migration</div>
+            <div class="proj-desc">Lift & shift + refactor for a B2B SaaS product to multi-region cloud with zero downtime cutover.</div>
+
+            <div class="proj-actions">
+              <button class="action">Case Study</button>
+              <button class="action">Read More</button>
+            </div>
+          </div>
+
+          <div class="back proj-flip back" aria-hidden="true">
+            <div class="back-left">
+              <h4>Global SaaS Migration</h4>
+              <p>Designed blue/green deployment patterns, infra-as-code and CI/CD reducing cost and improving latency.</p>
+              <div class="meta-list">
+                <span class="meta">Terraform</span>
+                <span class="meta">AWS</span>
+                <span class="meta">CI/CD</span>
+              </div>
+            </div>
+            <div class="back-right">
+              <i class="fa-solid fa-cloud" style="font-size:36px;color:var(--neon)"></i>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj-card appear" data-category="web" tabindex="0">
+        <div class="proj-inner">
+          <div class="proj-media" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80');">
+            <div class="proj-overlay"></div>
+          </div>
+
+          <div class="proj-body">
+            <div class="proj-tags"><span class="proj-tag">Web</span></div>
+            <div class="proj-title">Customer Portal Rebuild</div>
+            <div class="proj-desc">UX-first rebuild with micro-frontends, improved conversion by 28% and lowered bounce rates.</div>
+
+            <div class="proj-actions">
+              <button class="action">Demo</button>
+              <button class="action">Specs</button>
+            </div>
+          </div>
+
+          <div class="back proj-flip back" aria-hidden="true">
+            <div class="back-left">
+              <h4>Customer Portal</h4>
+              <p>Reworked authentication and modular front-end architecture, enabling independent releases per feature team.</p>
+              <div class="meta-list">
+                <span class="meta">React</span>
+                <span class="meta">Micro-frontend</span>
+              </div>
+            </div>
+            <div class="back-right">
+              <i class="fa-solid fa-browser" style="font-size:36px;color:var(--neon)"></i>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj-card appear" data-category="security" tabindex="0">
+        <div class="proj-inner">
+          <div class="proj-media" style="background-image:url('https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=80');">
+            <div class="proj-overlay"></div>
+          </div>
+
+          <div class="proj-body">
+            <div class="proj-tags"><span class="proj-tag">Security</span></div>
+            <div class="proj-title">Enterprise Threat Shield</div>
+            <div class="proj-desc">Implemented SIEM, EDR and automated playbooks to reduce risk and speed incident response.</div>
+
+            <div class="proj-actions">
+              <button class="action">Overview</button>
+              <button class="action">Report</button>
+            </div>
+          </div>
+
+          <div class="back proj-flip back" aria-hidden="true">
+            <div class="back-left">
+              <h4>Threat Shield</h4>
+              <p>Continuous monitoring and automated containment lowered MTTR and increased security posture scores.</p>
+              <div class="meta-list"><span class="meta">SIEM</span><span class="meta">EDR</span></div>
+            </div>
+            <div class="back-right">
+              <i class="fa-solid fa-shield-halved" style="font-size:36px;color:var(--neon)"></i>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj-card appear" data-category="data ai" tabindex="0">
+        <div class="proj-inner">
+          <div class="proj-media" style="background-image:url('https://images.unsplash.com/photo-1508830524289-0adcbe822b40?auto=format&fit=crop&w=1200&q=80');">
+            <div class="proj-overlay"></div>
+          </div>
+
+          <div class="proj-body">
+            <div class="proj-tags"><span class="proj-tag">Data</span><span class="proj-tag">AI</span></div>
+            <div class="proj-title">Customer Insights Engine</div>
+            <div class="proj-desc">Unified event store + ML-driven segmentation powering personalized campaigns and ROI uplift.</div>
+
+            <div class="proj-actions">
+              <button class="action">Explore</button>
+              <button class="action">Metrics</button>
+            </div>
+          </div>
+
+          <div class="back proj-flip back" aria-hidden="true">
+            <div class="back-left">
+              <h4>Insights Engine</h4>
+              <p>Real-time streaming analytics and feature stores enabling near-instant personalization at scale.</p>
+              <div class="meta-list"><span class="meta">Kafka</span><span class="meta">Spark</span></div>
+            </div>
+            <div class="back-right">
+              <i class="fa-solid fa-chart-line" style="font-size:36px;color:var(--neon)"></i>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj-card appear" data-category="cloud security" tabindex="0">
+        <div class="proj-inner">
+          <div class="proj-media" style="background-image:url('https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=1200&q=80');">
+            <div class="proj-overlay"></div>
+          </div>
+
+          <div class="proj-body">
+            <div class="proj-tags"><span class="proj-tag">Cloud</span><span class="proj-tag">Security</span></div>
+            <div class="proj-title">Secure Multi-Cloud Mesh</div>
+            <div class="proj-desc">Policy-driven network segmentation across multi-cloud environments with automated compliance.</div>
+
+            <div class="proj-actions">
+              <button class="action">Read</button>
+              <button class="action">Details</button>
+            </div>
+          </div>
+
+          <div class="back proj-flip back" aria-hidden="true">
+            <div class="back-left">
+              <h4>Multi-Cloud Mesh</h4>
+              <p>Automated policy enforcement and observability delivering consistent security and compliance.</p>
+              <div class="meta-list"><span class="meta">Istio</span><span class="meta">OPA</span></div>
+            </div>
+            <div class="back-right">
+              <i class="fa-solid fa-network-wired" style="font-size:36px;color:var(--neon)"></i>
+            </div>
+          </div>
+
+          
+        </div>
+      </article>
+
+      <!-- add more project cards as needed -->
+    </section>
+
+    <div class="note">Tip: hover a card or focus it to reveal extra details on the back. Use the filters above to narrow results.</div>
+  </div>
+
+   <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col about">
+                <h4>About Control Plus</h4>
+                <p>CONTROL PLUS is an innovative IT powerhouse delivering transformative digital solutions.
+                    We combine technology, strategy, and creativity to accelerate business growth worldwide.</p>
+                <p><strong>Mission:</strong> Empowering businesses to thrive in the digital era through intelligent
+                    solutions.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-code"></i> Software Development</a></li>
+                    <li><a href="#"><i class="fa-solid fa-cloud"></i> Cloud Solutions</a></li>
+                    <li><a href="#"><i class="fa-solid fa-shield-halved"></i> Cyber Security</a></li>
+                    <li><a href="#"><i class="fa-solid fa-brain"></i> AI & Automation</a></li>
+                    <li><a href="#"><i class="fa-solid fa-chart-line"></i> IT Consulting</a></li>
+                    <li><a href="#"><i class="fa-solid fa-laptop-code"></i> Web & App Design</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-book-open"></i> Blog & Insights</a></li>
+                    <li><a href="#"><i class="fa-solid fa-briefcase"></i> Case Studies</a></li>
+                    <li><a href="#"><i class="fa-solid fa-circle-question"></i> FAQs</a></li>
+                    <li><a href="#"><i class="fa-solid fa-newspaper"></i> Press & Media</a></li>
+                    <li><a href="#"><i class="fa-solid fa-user-graduate"></i> Careers</a></li>
+                    <li><a href="#"><i class="fa-solid fa-handshake"></i> Partnerships</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col contact">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><i class="fa-solid fa-location-dot"></i> 123 Tech Park, Silicon City, USA</li>
+                    <li><i class="fa-solid fa-phone"></i> +1 234 567 890</li>
+                    <li><i class="fa-solid fa-envelope"></i> contact@controlplus.com</li>
+                    <li><i class="fa-solid fa-clock"></i> Mon–Fri: 9:00 AM – 6:00 PM</li>
+                </ul>
+            </div>
+
+            <div class="footer-col newsletter">
+                <h4>Newsletter</h4>
+                <p>Subscribe for the latest tech insights, trends, and news from Control Plus.</p>
+                <form>
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <div class="copyright">
+        <p>© 2025 CONTROL PLUS. All Rights Reserved.</p>
+        <div class="policy-links">
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms of Service</a> |
+            <a href="#">Sitemap</a>
+        </div>
+    </div>
+<!-- Floating Buttons -->
+<button class="chat-btn"><i class="fa-solid fa-comments"></i></button>
+<button class="whatsapp-btn"><i class="fa-brands fa-whatsapp"></i></button>
+<button id="backToTop"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- Chat Windows -->
+<div class="chat-window" id="chatBox">
+  <div class="chat-header">CONTROL PLUS Assistant<span class="chat-close" id="closeChat">&times;</span></div>
+  <div class="chat-body" id="chatBody">Hello! 👋 How can I assist you today?</div>
+  <div class="chat-input">
+    <input type="text" id="chatInput" placeholder="Type a message...">
+    <button id="sendMsg"><i class="fa-solid fa-paper-plane"></i></button>
+  </div>
+</div>
+
+<div class="whatsapp-window" id="whatsappBox">
+  <div class="whatsapp-header">WhatsApp Chat<span class="chat-close" id="closeWhatsApp">&times;</span></div>
+  <div class="chat-body">Hi 👋, welcome to CONTROL PLUS! How can we help you today?</div>
+  <div class="chat-input">
+    <input type="text" placeholder="Type a message...">
+    <button><i class="fa-solid fa-paper-plane"></i></button>
+  </div>
+</div>
+
+     <script src="main.js"></script>
+
+  
+  
+</body>
+</html>

@@ -196,3 +196,96 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll();
+
+
+
+    
+
+// Main Project section
+
+     (function(){
+      const root = document;
+      const filterBtns = Array.from(root.querySelectorAll('.filter-btn'));
+      const grid = root.getElementById('projectsGrid');
+      const items = Array.from(root.querySelectorAll('.proj-card'));
+      const countEl = root.getElementById('projCount');
+
+      // animate counters for visible items
+      function setCount(n){
+        let start = 0;
+        const dur = 450;
+        const step = Math.max(1, Math.round(n / (dur / 15)));
+        const iv = setInterval(()=>{
+          start += step;
+          if(start >= n){ start = n; clearInterval(iv); }
+          countEl.textContent = start;
+        }, 15);
+      }
+
+      // initial count
+      setCount(items.length);
+
+      function applyFilter(filter){
+        const f = filter.trim().toLowerCase();
+        let visible = 0;
+        items.forEach((it, idx)=>{
+          const cats = it.getAttribute('data-category') || '';
+          const matches = (f === 'all') || cats.split(/\s+/).indexOf(f) !== -1;
+          if(matches){
+            // show
+            it.classList.remove('hidden');
+            // trigger appear animation with small stagger
+            const inner = it.querySelector('.appear');
+            if(inner){ inner.style.animationDelay = (idx * 30) + 'ms'; }
+            visible++;
+          } else {
+            // hide
+            it.classList.add('hidden');
+          }
+        });
+        setCount(visible);
+      }
+
+      // wire buttons
+      filterBtns.forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+          filterBtns.forEach(b=>{ b.classList.remove('active'); b.setAttribute('aria-pressed','false'); });
+          btn.classList.add('active');
+          btn.setAttribute('aria-pressed','true');
+          const filter = btn.dataset.filter || 'all';
+          applyFilter(filter);
+        });
+
+        // keyboard: Enter & Space works
+        btn.addEventListener('keydown', (e)=>{
+          if(e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            btn.click();
+          }
+        });
+      });
+
+      // Accessibility: allow focusing cards and toggling details with Enter
+      items.forEach(card=>{
+        card.addEventListener('keydown', (e)=>{
+          if(e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            // toggle a class so back appears for keyboard users
+            const inner = card.querySelector('.proj-inner .back');
+            if(inner){
+              const visible = inner.style.visibility === 'visible';
+              if(visible){
+                inner.style.visibility = ''; inner.style.opacity = ''; inner.style.transform = '';
+              } else {
+                inner.style.visibility = 'visible';
+                inner.style.opacity = '1';
+                inner.style.transform = 'rotateY(0deg)';
+              }
+            }
+          }
+        });
+      });
+
+      // initial show all
+      applyFilter('all');
+    })();
